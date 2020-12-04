@@ -2,6 +2,7 @@ from functools import partial
 import re
 from typing import Dict, List
 
+
 def parse_file(input_file: str) -> List[Dict]:
     """
     Parses the file of passports
@@ -82,18 +83,17 @@ def passport_is_valid(passport: Dict, validate: bool = False) -> bool:
 
 def challenge_01(input_file: str) -> int:
 
-    return sum(
-        [passport_is_valid(passport) for passport in parse_file(input_file)]
-    )
+    return sum([passport_is_valid(passport) for passport in parse_file(input_file)])
 
 
 def challenge_02(input_file: str) -> int:
 
     return sum(
-        [passport_is_valid(passport, validate=True)
-            for passport in parse_file(input_file)]
+        [
+            passport_is_valid(passport, validate=True)
+            for passport in parse_file(input_file)
+        ]
     )
-
 
 
 if __name__ == "__main__":

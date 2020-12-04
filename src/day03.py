@@ -3,6 +3,7 @@ from math import prod
 import re
 from typing import Tuple
 
+
 def toboggan_trees(input_file: str, steps_across: int, steps_down: int) -> int:
     """
     Takes a map of a toboggan run and, following discrete steps down the map,
@@ -24,7 +25,6 @@ def toboggan_trees(input_file: str, steps_across: int, steps_down: int) -> int:
                 number_of_trees += 1
             position["x"] += steps_across
             position["y"] += 1
-
 
     return number_of_trees
 

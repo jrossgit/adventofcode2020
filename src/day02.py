@@ -1,6 +1,7 @@
 import logging
 import re
 
+
 def validate_password_file(input_file: str) -> int:
     """
     Takes a list of password rules and passwords in the format, one per line:
@@ -45,7 +46,9 @@ def validate_password_file_positional(input_file: str) -> int:
         for line in f.readlines():
             first, last, char, password = PASSWORD_VALIDATE_RE.match(line).groups()
 
-            if bool(password[int(first)-1] == char) ^ bool(password[int(last)-1] == char):
+            if bool(password[int(first) - 1] == char) ^ bool(
+                password[int(last) - 1] == char
+            ):
                 correct_passwords += 1
 
     return correct_passwords

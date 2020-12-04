@@ -1,7 +1,7 @@
-
 from typing import Tuple
 
 Vector = Tuple[int]
+
 
 def puzzle_01(input_file: str) -> Vector:
     """
@@ -41,7 +41,7 @@ def puzzle_02(input_file: str) -> Vector:
                     number1,
                     number2,
                     difference - number2,
-                    number1 * number2 * (difference - number2)
+                    number1 * number2 * (difference - number2),
                 )
 
 
