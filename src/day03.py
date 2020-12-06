@@ -29,7 +29,7 @@ def toboggan_trees(input_file: str, steps_across: int, steps_down: int) -> int:
     return number_of_trees
 
 
-def toboggan_trees_task_2(input_file: str) -> Tuple[int]:
+def toboggan_trees_task_2(input_file: str) -> Tuple[Tuple, int]:
 
     results = (
         toboggan_trees(input_file, 1, 1),

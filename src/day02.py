@@ -19,7 +19,9 @@ def validate_password_file(input_file: str) -> int:
     correct_passwords = 0
     with open(f"inputs/{input_file}") as f:
         for line in f.readlines():
-            lower, upper, char, password = PASSWORD_VALIDATE_RE.match(line).groups()
+            match = PASSWORD_VALIDATE_RE.match(line)
+            if match:
+                lower, upper, char, password = match.groups()
 
             if int(lower) <= password.count(char) <= int(upper):
                 correct_passwords += 1
@@ -44,7 +46,9 @@ def validate_password_file_positional(input_file: str) -> int:
     correct_passwords = 0
     with open(f"inputs/{input_file}") as f:
         for line in f.readlines():
-            first, last, char, password = PASSWORD_VALIDATE_RE.match(line).groups()
+            match = PASSWORD_VALIDATE_RE.match(line)
+            if match:
+                first, last, char, password = match.groups()
 
             if bool(password[int(first) - 1] == char) ^ bool(
                 password[int(last) - 1] == char

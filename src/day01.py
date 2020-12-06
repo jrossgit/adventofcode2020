@@ -3,7 +3,7 @@ from typing import Tuple
 Vector = Tuple[int]
 
 
-def puzzle_01(input_file: str) -> Vector:
+def puzzle_01(input_file: str) -> Tuple[int, int, int]:
     """
     Takes a data file containing a list of integers (one per line),
     finds the two integers summing 2020 and multiplies them together
@@ -19,8 +19,10 @@ def puzzle_01(input_file: str) -> Vector:
         if 2020 - number in numbers:
             return number, 2020 - number, number * (2020 - number)
 
+    raise ValueError("Failed to find combination of numbers")
 
-def puzzle_02(input_file: str) -> Vector:
+
+def puzzle_02(input_file: str) -> Tuple[int, int, int, int]:
     """
     Takes a data file containing a list of integers (one per line),
     finds the two integers summing 2020 and multiplies them together
@@ -43,6 +45,8 @@ def puzzle_02(input_file: str) -> Vector:
                     difference - number2,
                     number1 * number2 * (difference - number2),
                 )
+
+    raise ValueError("Failed to find combination of numbers")
 
 
 if __name__ == "__main__":

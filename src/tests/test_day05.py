@@ -1,5 +1,6 @@
 from src import day05
 
+
 def test_that_airport_code_returns_correct_ids():
 
     assert day05.get_seat_id("BFFFBBFRRR") == 567

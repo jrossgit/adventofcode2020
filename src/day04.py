@@ -1,6 +1,6 @@
 from functools import partial
 import re
-from typing import Dict, List
+from typing import Callable, Dict, List
 
 
 def parse_file(input_file: str) -> List[Dict]:
@@ -62,7 +62,7 @@ def passport_is_valid(passport: Dict, validate: bool = False) -> bool:
 
     :returns: boolean indicating the validity of the given passport
     """
-    required_validators = {
+    required_validators: Dict[str, Callable[[str], bool]] = {
         "byr": partial(year_range_validator, 1920, 2002),
         "ecl": eye_colour_validator,
         "eyr": partial(year_range_validator, 2020, 2030),
