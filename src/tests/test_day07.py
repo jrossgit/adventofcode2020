@@ -17,4 +17,4 @@ def test_rule_traversal():
         "faded blue": [],
     }
 
-    assert day07.traverse_backwards(test_data, "faded blue") == ["vibrant plum"]
+    assert day07.traverse_backwards(test_data, "faded blue") == 2
