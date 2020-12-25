@@ -62,23 +62,9 @@ class ShipWaypoint:
         elif command == "W":
             self.waypoint -= value
         elif command == "R":
-            if value == 90:
-                self.waypoint = self.waypoint * (0 - 1j)
-            elif value == 180:
-                self.waypoint = self.waypoint * -1
-            elif value == 270:
-                self.waypoint = self.waypoint * (0 + 1j)
-            else:
-                raise RuntimeError(f"{instruction} not recognised")
+            self.waypoint = self.waypoint * (0 - 1j) ** (value / 90)
         elif command == "L":
-            if value == 90:
-                self.waypoint = self.waypoint * (0 + 1j)
-            elif value == 180:
-                self.waypoint = self.waypoint * -1
-            elif value == 270:
-                self.waypoint = self.waypoint * (0 - 1j)
-            else:
-                raise RuntimeError(f"{instruction} not recognised")
+            self.waypoint = self.waypoint * (0 + 1j) ** (value / 90)
         else:
             raise RuntimeError(f"{instruction} not recognised")
 
